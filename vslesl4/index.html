@@ -111,7 +111,7 @@
   margin-top: 4px;
 }
 </style>
-
+<script src="https://sphereaffiliate.com/api/public/tracker.js" async></script>
 
 
 </head>
@@ -591,6 +591,30 @@
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js");
   document.head.appendChild(a);
 </script>
+<script>
+  (function() {
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (Array.from(urlParams).length === 0) return;
+      document.querySelectorAll("a").forEach(link => {
+        try {
+          const href = link.getAttribute("href");
 
+          if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
+
+          const linkUrl = new URL(href, window.location.origin);
+
+          urlParams.forEach((value, key) => {
+            if (!linkUrl.searchParams.has(key)) {
+              linkUrl.searchParams.set(key, value);
+            }
+          });
+          link.setAttribute("href", linkUrl.toString());
+        } catch (e) {
+        }
+      });
+    });
+  })();
+</script>
 
 </body></html>
