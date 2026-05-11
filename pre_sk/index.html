@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <title>Quintal da Matriz Cozinha e Bar | Apresentação Institucional</title>
+  <meta name="description" content="Página institucional do Quintal da Matriz Cozinha e Bar com identificação empresarial, contexto comercial e dados da operação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f2eb;
+      --surface: #ffffff;
+      --surface-soft: #efe2d2;
+      --line: #dfcfbc;
+      --text: #261b14;
+      --muted: #6d6055;
+      --accent: #8d5631;
+      --accent-dark: #5b3319;
+      --accent-soft: #f2d8c3;
+      --radius: 24px;
+      --shadow: 0 24px 58px rgba(38, 27, 20, 0.08);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(141, 86, 49, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(242, 216, 195, 0.82), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 28px), var(--max)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 242, 235, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(223, 207, 188, 0.92);
+    }
+
+    .topbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      flex: 0 0 auto;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .brand small {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    nav a:hover {
+      background: var(--surface-soft);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 34px 0 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel, .card, footer {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--accent-dark);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .lead, .card p, footer p, li {
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 58ch;
+      font-size: 1.03rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 800;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .hero-visual {
+      padding: 20px;
+      display: grid;
+      align-items: stretch;
+    }
+
+    .visual {
+      min-height: 100%;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(141, 86, 49, 0.08), rgba(255,255,255,0)),
+        linear-gradient(135deg, #fff7f1, #f8ede2);
+      border: 1px solid var(--line);
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .table-scene {
+      min-height: 240px;
+      display: grid;
+      place-items: center;
+    }
+
+    .table-card {
+      width: min(100%, 330px);
+      padding: 18px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 34px rgba(91, 51, 25, 0.08);
+    }
+
+    .plate {
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      border: 10px solid #f1e3d5;
+      background:
+        radial-gradient(circle at 50% 50%, #7c9b44 0 18%, transparent 18.5%),
+        radial-gradient(circle at 38% 58%, #c86c35 0 16%, transparent 16.5%),
+        radial-gradient(circle at 62% 58%, #d48f47 0 16%, transparent 16.5%),
+        radial-gradient(circle at 50% 30%, #8b4f2e 0 16%, transparent 16.5%),
+        linear-gradient(135deg, #fff, #f7efe8);
+    }
+
+    .table-card strong {
+      display: block;
+      margin-bottom: 6px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .table-card span {
+      display: block;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .visual-tags {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 12px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .tag strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    section { padding: 12px 0; }
+
+    .section-head {
+      margin-bottom: 14px;
+    }
+
+    .section-head span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      margin: 8px 0 0;
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card { padding: 22px; }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .facts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .facts li + li {
+      margin-top: 10px;
+    }
+
+    .facts strong {
+      color: var(--text);
+    }
+
+    footer {
+      margin: 18px 0 36px;
+      padding: 22px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero, .grid-3, .grid-2, .visual-tags {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        padding: 10px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="brand-mark">QM</div>
+        <div>
+          <strong>Quintal da Matriz Cozinha e Bar</strong>
+          <small>Apresentação institucional da operação</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#empresa">Empresa</a>
+        <a href="#operacao">Operação</a>
+        <a href="#dados">Dados</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <section class="hero">
+        <article class="panel hero-copy">
+          <div class="eyebrow">Cozinha, bar e presença local</div>
+          <h1>Uma página direta para apresentar uma operação real do nicho gastronômico.</h1>
+          <p class="lead">O Quintal da Matriz Cozinha e Bar utiliza esta estrutura para apresentar sua identidade comercial, sua presença local e os dados institucionais básicos da empresa de forma clara, acessível e organizada para diferentes dispositivos.</p>
+          <div class="actions">
+            <a class="button primary" href="#dados">Ver identificação</a>
+            <a class="button" href="#operacao">Entender a operação</a>
+          </div>
+        </article>
+
+        <aside class="panel hero-visual">
+          <div class="visual">
+            <div class="table-scene" aria-hidden="true">
+              <div class="table-card">
+                <div class="plate"></div>
+                <strong>Ambiente de cozinha e bar</strong>
+                <span>Visual mais próximo de um negócio local, com identidade simples e leitura humana.</span>
+              </div>
+            </div>
+            <div class="visual-tags">
+              <div class="tag">
+                <strong>Local</strong>
+                <span>Presença ligada ao território e ao atendimento</span>
+              </div>
+              <div class="tag">
+                <strong>Clareza</strong>
+                <span>Informações empresariais acessíveis</span>
+              </div>
+              <div class="tag">
+                <strong>Contexto</strong>
+                <span>Estrutura pensada para parecer mais real</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="empresa">
+        <div class="section-head">
+          <span>Apresentação</span>
+          <h2>Como a empresa se apresenta</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Identidade comercial visível</h3>
+            <p>O conteúdo foi organizado para facilitar a identificação imediata da empresa, do seu contexto e da sua presença digital.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Leitura acessível</h3>
+            <p>A página adota uma estrutura leve, responsiva e fácil de consultar em celular ou desktop, sem excesso de complexidade.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Presença mais humana</h3>
+            <p>O objetivo foi criar uma apresentação com mais contexto de nicho e menos aparência genérica, mantendo a transparência da operação.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="operacao">
+        <div class="section-head">
+          <span>Estrutura</span>
+          <h2>Informações sobre a operação</h2>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <div class="icon">A</div>
+            <h3>Segmento gastronômico</h3>
+            <p>O Quintal da Matriz Cozinha e Bar se apresenta dentro do segmento de alimentação e bar, com comunicação institucional clara e coerente com seu nicho de atuação.</p>
+          </article>
+          <article class="card">
+            <div class="icon">B</div>
+            <h3>Navegação consistente</h3>
+            <p>Esta estrutura foi desenvolvida para manter coerência entre domínio, empresa identificada e conteúdo exibido, com foco em leitura simples e transparente.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="dados">
+        <div class="section-head">
+          <span>Dados empresariais</span>
+          <h2>Identificação da organização</h2>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <ul class="facts">
+              <li><strong>Nome comercial:</strong> Quintal da Matriz Cozinha e Bar</li>
+              <li><strong>CNPJ:</strong> 65.386.857/0001-37</li>
+            </ul>
+          </article>
+          <article class="card">
+            <ul class="facts">
+              <li><strong>Logradouro:</strong> Rua Sete de Setembro, 286</li>
+              <li><strong>Bairro:</strong> Centro (Cachoeira do Campo)</li>
+              <li><strong>Município / UF:</strong> Ouro Preto, MG</li>
+              <li><strong>CEP:</strong> 35409-048</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="panel">
+      <p><strong>Quintal da Matriz Cozinha e Bar</strong> · CNPJ 65.386.857/0001-37 · Rua Sete de Setembro, 286, Centro (Cachoeira do Campo), Ouro Preto - MG, 35409-048, Brasil.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="terms.html">Termos de Uso</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <p>Esta página foi organizada para apresentação institucional da operação, com foco em clareza, contexto e identificação comercial visível.</p>
+    </footer>
+  </div>
+</body>
+</html>
